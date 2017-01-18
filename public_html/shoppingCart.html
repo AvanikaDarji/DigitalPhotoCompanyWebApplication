@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<!--
+
+
+Student Info: Name=Avanika, ID=16387
+
+Subject: CS557(C)_Week3_Fall_2016
+
+Author: siddharthchauhan
+
+Filename: shoppingCart.html
+
+Date and Time: Nov 8, 2016 5:24:18 PM
+
+Project Name: CS557_C__Week3_16387_Avanika
+
+
+-->
+
+<html>
+    <head>
+        <title>Selected Items</title>
+         <link rel="stylesheet" type="text/css" href="style.css" />
+         
+       <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js"></script>
+        <script type="text/javascript">
+            window.onload = function () {
+               
+               showSelectedData();
+            };
+            
+         function showSelectedData() {
+
+
+               item= localStorage.getItem('itemName');
+               qul= localStorage.getItem('Quantity');
+               
+               $(".tabularformat").append("<tr><td style='width:100px; font-weight: bold; float: left;'>ItemName:</td><td style='width:200px;float: left;'>" + item + "</td></tr>");
+            $(".tabularformat").append("<tr><td style='width:100px; font-weight: bold; float: left;'>Quantity</td><td style='width:200px;float: left;'>" + qul + "</td></tr>");  
+             } 
+             
+             function RemoveItems(){
+                 
+                 localStorage.removeItem('itemName');
+                 localStorage.removeItem('Quantity');
+             }
+             </script>       
+                   
+     
+               
+
+                
+                 
+                   
+                   
+                    
+               
+                 
+            
+       </head>
+       
+    <body>
+        <div id= "ti">
+                <header> Your Shopping cart </header>
+            </div>
+        <form  name = "chcekout" action="checkOut.html"  method = "post" onsubmit="" >
+           
+       
+      
+     <div id="divTable">
+    </div>
+    <table class="tabularformat" style="border:0">
+       
+    </table>
+       
+       
+       
+            <input type='button' id='button1' value='GoToCheckOut'>
+            <input type='button' id='button2' value='GoToOrder'>
+              
+              <script type="text/javascript">
+                  
+               document.getElementById('button1').onclick = function() {
+             
+             location.href = "checkOut.html";
+              }    
+            document.getElementById('button2').onclick = function() {
+             
+             location.href = "OrderForm.html";
+              }
+            </script>
+            <button onclick="RemoveItems()">Remove</button>
+            
+       
+</body>
+</html>   
+                    
+                   
+                    
+               
+            
+    
+     
+   

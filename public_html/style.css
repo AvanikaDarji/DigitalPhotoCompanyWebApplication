@@ -1,0 +1,148 @@
+
+/*
+
+
+Student Info: Name=Avanika, ID=16387
+
+Subject: CS557(C)_Week3_Fall_2016
+
+Author: User
+
+Filename: style.css
+
+Date and Time: Oct 24, 2016 3:08:24 PM
+
+Project Name: CS557_C__Week3_16387_Avanika
+
+    Created on : Oct 24, 2016, 3:08:24 PM
+    Author     : User
+*/
+*{
+margin:0px;
+padding:0px; 
+list-style-type:none;
+}
+header,nav,section,footer
+{
+display:block; 
+}
+
+.container
+{
+background-color: lightsteelblue;
+} 
+header
+{
+width:2100px; margin:2px; padding:2px;
+} 
+nav
+{
+margin:2px; padding:2px; text-align: center;
+}
+ul.tab h1{
+    text-align: center;
+}
+ul.tab {
+list-style-type: armenian;
+margin: 0;
+padding: 0;
+overflow: hidden;
+border: 1px solid #ccc; background-color: #ffcccc;
+}
+/* Float the list items side by side */ ul.tab li {float: left;}
+/* Style the links inside the list items */ 
+ul.tab li a
+{
+display: inline-block;
+color: black; 
+text-align: center; 
+padding: 14px 16px; 
+text-decoration: none; 
+transition: 0.3s; 
+font-size: 17px;
+}
+
+ul.tab li a:hover 
+{
+    background-color: #ddd;
+}
+ul.tab li a:focus, .active
+{background-color: #ccc;
+}
+#map{
+    width:400px;
+    height:400px
+}
+
+
+ #visit {
+        width: 100%;
+    }
+     .column {
+        margin: 1em 0;
+        border-bottom: 1px dashed #7b96bc;
+        float:right;
+    }
+    h2 {
+    text-align: right;
+    font-variant: small-caps;
+    font-color: white;
+}
+
+dl {
+    margin: 0 0.5em;
+}
+
+dt {
+    font-weight: bold;
+    margin: 0.5em 1em 0.5em 0;
+    border-bottom: 1px dashed #7b96bc;
+}
+
+ul.tab {
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+border: 1px solid #ccc; 
+background-color: #f1f1f1;
+}
+.container {
+    width:100%;
+    float:left;
+}
+
+.image{
+    width: 30%;
+}
+
+code {
+  background: #2db34a;
+  border-radius: 6px;
+  color: #fff;
+  display: block;
+  font: 14px/24px "Source Code Pro", Inconsolata, "Lucida Console", Terminal, "Courier New", Courier;
+  padding: 24px 15px;
+  text-align: center;
+}
+header,
+section,
+aside,
+footer {
+  margin: 0 1.5% 24px 1.5%;
+}
+section {
+  float: left;
+  width: 30%;
+}
+footer {
+  clear: both;
+  margin-bottom: 0;
+}
+
+
+
+
+ td { text-align :center}
+
+

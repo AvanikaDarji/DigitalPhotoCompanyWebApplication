@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<!--
+
+
+Student Info: Name=Avanika, ID=16387
+
+Subject: CS557(C)_Week3_Fall_2016
+
+Author: siddharthchauhan
+
+Filename: OrderForm.html
+
+Date and Time: Oct 24, 2016 7:10:21 PM
+
+Project Name: CS557_C__Week3_16387_Avanika
+
+
+-->
+
+<html>
+    
+        <title>TODO supply a title</title>
+        <link rel="stylesheet" href="style.css">
+        
+          <script type="text/javascript">  
+             
+           
+   function storeData() {
+    
+ 
+   var radios = document.getElementsByName('items');
+
+   for (var i = 0, length = radios.length; i < length; i++) {
+    if (radios[i].checked) {
+        
+        window.localStorage.setItem("itemName", radios[i].value);
+
+        
+        break;
+    }
+}
+      var checkedValue = document.querySelector('.effect:checked').value;
+      
+      //Validation for Quantity
+      
+      var qtyy = document.getElementById("item_quantity").value;
+      
+      if (isNaN(qtyy) || qtyy < 1) { 
+          var oNewP = document.createElement("p");
+         oNewP.appendChild(document.createTextNode("Please add a Valid Number"));
+         document.body.appendChild(oNewP);
+    }else{
+         window.localStorage.setItem("Quantity", qtyy);
+    }
+
+      var e = document.getElementById("qualitytypes");
+      var itemquality = e.options[e.selectedIndex].text;
+
+       
+       // window.localStorage.setItem("Quantity", qtyy);
+        window.localStorage.setItem("quality", itemquality);
+         window.localStorage.setItem("Glossy", checkedValue);
+         return false;
+     }
+     
+     </script>
+     <script type="text/javascript">  
+         
+function CalculateCost(){
+    
+ qty=localStorage.getItem('Quantity');
+ gloss = localStorage.getItem('Glossy');
+ qul = localStorage.getItem('quality');
+ item=localStorage.getItem('itemName');
+ 
+ var t = document.getElementById("result").value; 
+ var totalValue;
+ 
+  switch (item) {
+                    case 'hardcopyprints':
+                        if((gloss = "Glossyfinish") && (qul="Good")){
+                         t = 8.99 + 2;
+                     }
+                     else 
+                     if((gloss = "Glossyfinish") && (qul="VeryGood")){
+                         t = 9.99 + 2;
+                     }else
+                 if((gloss = "Glossyfinish") && (qul="Excellent")){
+                         t = 10.99 + 2;
+                     }
+                     break;    
+                          
+                        
+
+                    case 'posters':
+                       
+                        if((gloss = "Glossyfinish") && (qul="Good")){
+                         t = 9.99 + 2;
+                     }
+                     else 
+                     if((gloss = "Glossyfinish") && (qul="VeryGood")){
+                         t = 10.99 + 2;
+                     }else
+                 if((gloss = "Glossyfinish") && (qul="Excellent")){
+                         t = 11.99 + 2;
+                     }
+                     break; 
+                       
+                    case 'CoffeeMug':
+                          if((gloss = "Glossyfinish") && (qul="Good")){
+                         t = 10.00 + 2;
+                     }
+                     else 
+                     if((gloss = "Glossyfinish") && (qul="VeryGood")){
+                         t = 11.99 + 2;
+                     }else
+                 if((gloss = "Glossyfinish") && (qul="Excellent")){
+                         t = 12.99 + 2;
+                     }
+                     break; 
+                       case 'Tshirt':
+                          if((gloss = "Glossyfinish") && (qul="Good")){
+                         t = 11.00 + 2;
+                     }
+                     else 
+                     if((gloss = "Glossyfinish") && (qul="VeryGood")){
+                         t = 12.99 + 2;
+                     }else
+                 if((gloss = "Glossyfinish") && (qul="Excellent")){
+                         t = 13.99 + 2;
+                     }
+                     break;  
+ default:
+                        t = 0;
+                   
+        }    
+        totalValue = t * qty;
+        document.getElementById("result").value = totalValue;
+        }
+                   
+ 
+ 
+ //document.getElementById(total).value=qty.value*value;
+
+   
+   
+ 
+    
+    
+
+
+            
+            
+        </script>
+      
+       
+    
+    <body>
+        
+        <form method = "post" onsubmit="return storeData()" data-ajax="false"> 
+      
+           <div id ="heading"> 
+                   <h1> Your Shopping Cart </h1>
+            </div>
+            <br>
+            
+              Image Quality:<select id ="qualitytypes">
+                            <option value="1" selected="selected">Good</option>
+		            <option value="2">VeryGood</option>
+		             <option value="3">Excellent</option>  
+              </select>
+            
+              <br>
+           
+               
+           <div id = "items"> 
+               <br>
+   Types Of Items: <input type="radio" name ="items" value="hardcopyprints"/> hardcopy prints 
+   <br>
+   <img class="image" src="images/hard_copy.jpg" /><br>
+                <input type="radio" name ="items" value="posters"/>  posters<br>
+                <img class="image" src="images/poster.jpg" /> <br>
+                <input type="radio" name ="items" value="CoffeeMug"/> Coffee Mug<br>
+                <img class="image" src="images/coffee_mug.jpg" />      <br>
+                
+                 <input type="radio" name ="items" value="Tshirt"/> T-shirt<br>
+                 <img class="image" src="images/Tshirt.jpg" />    
+           </div>
+               
+              <br>
+              
+               Total Quantity:<input type="text" id ="item_quantity" name ="item_quantity" />
+               <p> Add a qty</p>
+             
+               <br>  
+              </br>
+         
+              
+             
+              Glossy Finish:	<input class="effect" type="checkbox" value="Glossyfinish"> <br>
+              
+              <br>
+              
+             
+            
+              <input type ="submit" value ="AddtoCart"> <br>
+              <br>
+              
+              
+        </form>
+        
+              <button onclick="CalculateCost()">Calculate</button><br>
+
+                
+		
+        
+          <label>
+        <br> Cost of Selected items:
+        <input type="text" id="result" value=""><br>
+        
+        
+      </label>
+               </br>
+             
+                         
+               <input type="submit" id="submit" value="Go to Cart" />  
+          
+<script type="text/javascript">
+        document.getElementById("submit").onclick = function () {
+            location.href = "shoppingCart.html";
+        };
+    </script>
+    </body>
+</html>
+              
+                       
+
+              
+              
+                   
+           
+         
+               
+              
+               
+              
+                        
+               
+                
+           
+        
+               
+   
+    
+        
+               
+            
+               
+		
+                
+         
+             
+
+           
+          
+                                              
+                        	
+                       
+                       
+                  
+			
+                
+                
+               
+                                               
+		
+			
+	      
+                        
+			
+		
+               
+                                           
+		
+
+					
+         
+			
+			
+			
+	
+        
+
+        
+         
+                    

@@ -1,0 +1,13 @@
+{
+    "name": "CS557_C__Week3_16387_Avanika",
+    "version": "1.0.0",
+    "main": "path/to/main.css",
+    "ignore": [
+        ".jshintrc",
+        "**/*.txt"
+    ],
+    "dependencies": {
+    },
+    "devDependencies": {
+    }
+}
